@@ -6,12 +6,49 @@
     Déclarer un problème
     </div>
     <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <h5 class="card-title">Remplisser</h5>
+    <div class="card-text">
+        <form
+        novalidate
+        (ngSubmit)="save()"
+        [formGroup]="problemeForm">
+                    <div class="form-group row">
+                <label for="prenomProblemeId" class="col-md-2 col-form-label text-right" >Entrez votre prénom:</label>
+                <div class="col-dm-10">
+                    <input class="form-control"
+                    id="prenomProblemeId"
+                    type="text"  
+                    id="floatingInput" 
+                    placeholder="name"
+                    formControlName="prenomProbleme"
+                    [ngClass]="{'is-invalid': (problemeForm.get('prenomProbleme').touched ||
+                    problemeForm.get('prenomProbleme').dirty) && 
+                    (!problemeForm.get('prenomProbleme').valid),
+                    'is-valid':(problemeForm.get('prenomProbleme').touched ||
+                    problemeForm.get('prenomProbleme').dirty) && 
+                    problemeForm.get('prenomProbleme').valid }"
+                    />
+
+                    <span class="form-text" *ngIf="(problemeForm.get('prenomProbleme').touched ||
+                       problemeForm.get('prenomProbleme').dirty) && 
+                       problemeForm.get('prenomProbleme').errors">
+                       <span *ngIf="problemeForm.get('prenomProbleme').errors.minlength">
+                           <small class="text-muted"> 
+                              Indiquer aumoin 3 caracteres
+                          </small>
+                        </span>
+                        <span *ngIf="problemeForm.get('prenomProbleme').errors.required">
+                            <small class="text-muted"> 
+                               Merci de saisir votre prenom
+                           </small>
+                         </span>
+
+                    </span> 
+                </div>
+              </div>    
+        </form>
     </div>
-    <div class="card-footer">
-        <a href="#" class="btn btn-primary">Sauvegarder</a>
     </div>
     </div>
    </div> 
-   
+   <title>Déclarer un probleme</title>
