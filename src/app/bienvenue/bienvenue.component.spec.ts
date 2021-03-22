@@ -21,5 +21,5 @@ describe('BienvenueComponent', () => {
 
   //it('should create', () => {
     //expect(component).toBeTruthy();
-  //});
+  //})//;
 });
