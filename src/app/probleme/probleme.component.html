@@ -32,7 +32,7 @@
                     <span class="form-text" *ngIf="(problemeForm.get('prenomProbleme').touched ||
                        problemeForm.get('prenomProbleme').dirty) && 
                        problemeForm.get('prenomProbleme').errors">
-                       <span *ngIf="problemeForm.get('prenomProbleme').errors.minlength">
+                       <span *ngIf="problemeForm.get('prenomProbleme').errors.nbreCaracteresInsuffisants">
                            <small class="text-muted"> 
                               Indiquer aumoin 3 caracteres
                           </small>

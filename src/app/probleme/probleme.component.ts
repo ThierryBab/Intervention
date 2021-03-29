@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ZonesValidator } from '../shared/longueur-minimum/longueur-minimum.component';
 
 @Component({
   selector: 'app-probleme',
@@ -16,7 +17,7 @@ export class ProblemeComponent implements OnInit {
 
   ngOnInit(): void {
     this.problemeForm = this.fb.group({
-        prenomProbleme: ['',[Validators.minLength(3), Validators.required]]
+        prenomProbleme: ['',[ZonesValidator.longueurMinimum(3), Validators.required]]
     });
 
   }
