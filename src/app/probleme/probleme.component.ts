@@ -32,7 +32,10 @@ export class ProblemeComponent implements OnInit {
         }),
         telephone: [{value: '', disabled: true}],
         Notification: [{value:'NePasNotifier', disabled:false}],
-        
+        descriptionProbleme: ['', [Validators.required, Validators.minLength(5)]],
+        noUnite: '',
+        dateProbleme: {value: Date(), disabled: true} 
+
     });
 
     this.typeProbleme.obtenirTypesProblemes()
@@ -89,6 +92,7 @@ export class ProblemeComponent implements OnInit {
       telephoneControl.enable();
       telephoneControl.setValidators([Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]+'), Validators.required]);
     }
+    
 
     courrielControl.updateValueAndValidity();
     courrielConfirmationControl.updateValueAndValidity();
