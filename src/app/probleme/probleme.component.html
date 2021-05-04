@@ -3,10 +3,10 @@
     <br/>
     <div class="card">
     <div class="card-header text-white bg-secondary">
-    Déclarer un problème
+    Remplisser
     </div>
     <div class="card-body">
-    <h5 class="card-title">Remplisser</h5>
+    <h5 class="card-title">Déclarer un probleme</h5>
     <div class="card-text">
         <form
         novalidate
@@ -18,7 +18,6 @@
                     <input class="form-control"
                     id="prenomProblemeId"
                     type="text"  
-                    id="floatingInput" 
                     placeholder="Votre Prénom ici (obligatoire)"
                     formControlName="prenomProbleme"
                     [ngClass]="{'is-invalid': (problemeForm.get('prenomProbleme').touched ||
@@ -52,7 +51,6 @@
                     <input class="form-control"
                     id="nomProblemeId"
                     type="text"  
-                    id="floatingInput" 
                     placeholder="Votre nom ici (obligatoire)"
                     formControlName="nomProbleme"
                     [ngClass]="{'is-invalid': (problemeForm.get('nomProbleme').touched ||
@@ -81,19 +79,19 @@
               </div>  
               
               <div class="form-group row">
-                  <label for="noProblemeId" class="col-md-2 col-form-label" >Type de probleme:</label>
+                  <label for="noTypeProblemeId" class="col-md-2 col-form-label" >Type de probleme:</label>
                   <div class="col-sm-10">
                      <select class="form-control"
-                      formControlName="noProbleme"
-                      id="noProblemeId"
+                      formControlName="noTypeProbleme"
+                      id="noTypeProblemeId"
                       type="text"
                       placeholder="Sélectionner un type de probleme (obligatoire)"
-                        [ngClass]="{'is-invalid': (problemeForm.get('noProbleme').touched ||
-                        problemeForm.get('noProbleme').dirty) &&
-                        !problemeForm.get('noProbleme').valid,
-                        'is-valid': (problemeForm.get('noProbleme').touched ||
-                        problemeForm.get('noProbleme').dirty) &&
-                        problemeForm.get('noProbleme').valid }"
+                        [ngClass]="{'is-invalid': (problemeForm.get('noTypeProbleme').touched ||
+                        problemeForm.get('noTypeProbleme').dirty) &&
+                        !problemeForm.get('noTypeProbleme').valid,
+                        'is-valid': (problemeForm.get('noTypeProbleme').touched ||
+                        problemeForm.get('noTypeProbleme').dirty) &&
+                        problemeForm.get('noTypeProbleme').valid }"
                         >
                         
                       <option value="">Sélectionner un type de probleme (obligatoire)</option>
@@ -315,7 +313,7 @@
                                   type="submit"                              
                                   [disabled]="problemeForm.get('prenomProbleme').invalid
                                    ||problemeForm.get('nomProbleme').invalid 
-                                   ||problemeForm.get('noProbleme').invalid
+                                   ||problemeForm.get('noTypeProbleme').invalid
                                    ||problemeForm.get('telephone').invalid
                                    ||problemeForm.get('courrielGroup.courriel').invalid
                                    ||problemeForm.get('courrielGroup.courrielConfirmation').invalid

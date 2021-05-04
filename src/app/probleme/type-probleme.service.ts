@@ -9,7 +9,7 @@ import { ITypeProbleme } from './typeProbleme';
 })
 export class TypeProblemeService {
 
-  private URLDonnes = 'api/typesprobleme'; 
+  private URLDonnes = 'https://localhost:5001/Intervention'; 
 
   constructor(private http: HttpClient) { }
 
